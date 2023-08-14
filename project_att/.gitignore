@@ -3,4 +3,4 @@ bin/
 project_att.csproj
 project_att\project_att.csproj
 checks.json
-project_att\bin
+project_att\bin/Debug/net7.0
