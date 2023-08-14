@@ -18,4 +18,4 @@
 
 ## Примечания:
 * Решение задачи приведено в файле project_att\Program.cs
-* Блок-схема отражена в файле project_att\scheme.io и продублирована в project_att\scheme.png 
+* Блок-схема отражена в файле project_att\scheme.drawio и продублирована в project_att\scheme.png 
