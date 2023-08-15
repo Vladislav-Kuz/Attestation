@@ -13,10 +13,10 @@ Console.WriteLine();
 
 Console.Write("Сколько строк вы будете вводить? ");
 string strNumber = new string(Console.ReadLine());
-bool resParseLength = int.TryParse(strNumber, out int NumberOfElements);
+bool resParseLength = int.TryParse(strNumber, out int numberOfElements);
 if (resParseLength)
 {
-    string[] userArray = GetArray(NumberOfElements);
+    string[] userArray = GetArray(numberOfElements);
     string[] decimArray = CreateNewArray(userArray, CountLength(userArray));
     Console.Write($"В первоначальном массиве [{string.Join("; ", userArray)}] содержится: \n");
     Console.Write($"количество строк не длиннее трех = {CountLength(userArray)},\n");
@@ -32,8 +32,7 @@ else Console.Write("Введены некорректные данные");
 string[] GetArray(int size)
 {
     string[] array = new string[size];
-    size = array.Length;
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 0; i < size; i++)
     {
         Console.Write($"{i + 1}-я строка: ");
         string? readElement = Console.ReadLine();
