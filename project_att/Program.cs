@@ -18,7 +18,9 @@ if (resParseLength)
 {
     string[] userArray = GetArray(NumberOfElements);
     string[] decimArray = CreateNewArray(userArray, CountLength(userArray));
-    Console.Write($"В первоначальном массиве [{string.Join("; ", userArray)}] содержится: \nколичество строк не длиннее трех = {CountLength(userArray)},\nновый массив -> [{string.Join("; ", decimArray)}]");
+    Console.Write($"В первоначальном массиве [{string.Join("; ", userArray)}] содержится: \n");
+    Console.Write($"количество строк не длиннее трех = {CountLength(userArray)},\n");
+    if (CountLength(userArray)!=0) Console.Write($"новый массив -> [{string.Join("; ", decimArray)}]");
     Console.WriteLine();
 }
 else Console.Write("Введены некорректные данные");
@@ -35,7 +37,12 @@ string[] GetArray(int size)
     {
         Console.Write($"{i + 1}-я строка: ");
         string? readElement = Console.ReadLine();
-        array[i] = readElement!;
+        if (readElement != string.Empty) array[i] = readElement!;
+        else 
+        {
+            Console.WriteLine($"Введен пустой элемент, повторите ввод");
+            i--;
+        }
     }
     return array;
 }
